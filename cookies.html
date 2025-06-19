@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RootCraft Studio - Cookie Policy</title>
+<!-- Google Fonts: Poppins + Indie Flower -->
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: #f9f7f1 url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8db879a2-4dfb-4b3b-8a96-68e4089ae46a.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #2f4f4f;
+    line-height: 1.75;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    color: #3a8240;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #1e4200;
+  }
+  h1,h2,h3 {
+    font-family: 'Indie Flower', cursive;
+    margin-top: 0;
+    color: #2c662d;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px solid #558b2f;
+    padding-bottom: 6px;
+    margin-bottom: 24px;
+    margin-top: 2em;
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px 24px;
+    background: #fdfcf6cc;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgb(30 60 15 / 0.1);
+    overflow-wrap: break-word;
+  }
+  header {
+    background: #dbeed6cc;
+    backdrop-filter: saturate(180%) blur(12px);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 24px;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2b572c;
+    user-select: none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background: #8fbf62cc;
+    color: #1e390d;
+  }
+  footer {
+    background: #f0f0f0;
+    color: #000;
+    padding: 48px 24px;
+    margin-top: auto;
+  }
+  footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  footer .address {
+    max-width: 460px;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #000;
+  }
+  @media (max-width: 768px) {
+    nav ul {
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    footer .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    footer .address {
+      max-width: 100%;
+    }
+  }
+  #cookie-consent {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(79,122,33,0.95);
+    color: white;
+    border-radius: 12px;
+    padding: 16px 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 960px;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+    font-size: 1rem;
+  }
+  #cookie-consent p {
+    flex: 1 1 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  #cookie-consent button {
+    background: #d1e5a3;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #2b572c;
+    transition: background-color 0.3s ease;
+  }
+  #cookie-consent button:hover, #cookie-consent button:focus {
+    background: #b4d07e;
+    outline: none;
+  }
+  
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-container" role="banner">
+    <div class="logo" aria-label="RootCraft Studio logo">RootCraft Studio</div>
+    <nav>
+      <ul role="navigation">
+        <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0"aria-current="page">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="container" role="main" aria-label="Cookie Policy Content">
+
+<h1>Cookie Policy</h1>
+<p>This Cookie Policy explains how RootCraft Studio ("we", "our", or "us") uses cookies and similar tracking technologies to recognize you when you visit our website at rootcraftstudio.com. It explains what these technologies are, why we use them, and your rights to control their usage. This comprehensive policy contains detailed information separated into 40 points for full transparency.</p>
+
+<h2>1. What Are Cookies?</h2>
+<p>Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used to make websites work or to improve their efficiency as well as to provide information to the website’s owners. They enable a website to remember your actions and preferences over time.</p>
+
+<h2>2. Types of Cookies We Use</h2>
+<p>We use different types of cookies on our website including essential cookies that enable core site functionality; performance cookies that collect anonymous data to improve user experience; functionality cookies that remember your settings; and advertising cookies to tailor relevant marketing communications.</p>
+
+<h2>3. First-Party vs. Third-Party Cookies</h2>
+<p>First-party cookies are set by the RootCraft Studio website, while third-party cookies may be set by service providers like analytics or advertising partners. We ensure third parties comply with privacy standards and that their use of cookies is disclosed transparently to you.</p>
+
+<h2>4. How We Use Cookies</h2>
+<p>Cookies help us recognize repeat visitors, understand user behavior, remember preferences such as language and region, enable shopping carts, and deliver personalized content. They also assist us in measuring the effectiveness of our marketing campaigns and optimizing website performance.</p>
+
+<h2>5. Essential Cookies</h2>
+<p>These cookies are necessary for the website to function properly, allowing you to navigate pages, log in securely, and use site features. Without essential cookies, services like secure transactions or login may not work correctly.</p>
+
+<h2>6. Performance and Analytics Cookies</h2>
+<p>These cookies collect anonymous information about how visitors use our website, such as which pages are visited most often and error messages. This helps us improve our site’s functionality and your overall experience by identifying areas that need enhancement.</p>
+
+<h2>7. Functionality Cookies</h2>
+<p>Functionality cookies allow the website to remember choices you have made in the past, such as your username, language preferences, or region. These improve your personalized experience and make using the site more convenient each time you visit.</p>
+
+<h2>8. Marketing and Advertising Cookies</h2>
+<p>We use these cookies to deliver advertisements that are more relevant to you and your interests. They may also limit how many times you see an ad and help measure the effectiveness of advertising campaigns.</p>
+
+<h2>9. Cookie Lifespans</h2>
+<p>Different cookies have differing lifespans: session cookies are temporary and deleted when you close your browser; persistent cookies remain on your device for a set period or until manually deleted. Our policies depend on the type of cookie used.</p>
+
+<h2>10. Consent to Cookies</h2>
+<p>We require your explicit consent to use non-essential cookies such as performance, functionality, and advertising cookies. You may accept or decline cookies through the cookie consent dialog. Your choices will be saved and respected during future visits.</p>
+
+<h2>11. Managing Cookie Preferences</h2>
+<p>You can manage or disable cookies using your browser settings or preferences at any time. We provide clear guidance on how to do this within this policy. Note that disabling cookies may affect website usability and your user experience.</p>
+
+<h2>12. How to Disable Cookies in Different Browsers</h2>
+<p>Instructions for managing cookies vary by browser. For example, in Chrome: go to settings → privacy and security → cookies and other site data; in Firefox: options → privacy & security → cookies and site data. We encourage reviewing your browser’s help section for precise controls.</p>
+
+<h2>13. Cookie Consent Dialog</h2>
+<p>Our cookie consent dialog appears at the bottom of your first visit. It explains our use of cookies and gives the option to accept or decline. Managing cookies is easy, and consenting helps us improve the site. You can revisit this choice anytime.</p>
+
+<h2>14. Withdrawal of Consent</h2>
+<p>You can withdraw or change your cookie preferences at any time from the cookie settings link provided in the footer of our website. This action is immediate and does not affect the lawfulness of prior data processing.</p>
+
+<h2>15. Cookies from Third Parties</h2>
+<p>Some services embedded into our site, such as social media platforms or analytics tools, may set their own cookies. We have no control over these cookies but require that third parties comply with privacy laws and disclose their practices.</p>
+
+<h2>16. Analytics Providers</h2>
+<p>We use Google Analytics and other analytics providers to collect aggregate and anonymous data. These providers use cookies to track visitor interactions and generate reports to help us understand usage patterns and improve our service.</p>
+
+<h2>17. Advertising Partners</h2>
+<p>Our advertising partners may use cookies to display relevant advertisements to you on our site and other sites on the internet. These cookies enable the delivery of targeted ads based on your visit to our website.</p>
+
+<h2>18. Behavioral and Retargeting Cookies</h2>
+<p>Behavioral cookies analyze your browsing habits and interests to show you relevant ads. Retargeting cookies help advertisers show you ads related to your previous interactions with RootCraft Studio.</p>
+
+<h2>19. Cookie Policy Updates</h2>
+<p>We may update this Cookie Policy periodically to reflect changes in our practices or legal requirements. We encourage you to review this page regularly to stay informed about our use of cookies and similar technologies.</p>
+
+<h2>20. Data Protection Officer Contact</h2>
+<p>For any questions or concerns about our cookie practices, you may contact our Data Protection Officer at privacy@rootcraftstudio.com. We strive to address your concerns promptly and transparently.</p>
+
+<h2>21. How Cookies Support Security</h2>
+<p>Cookies also help us in ensuring the security of our website by detecting fraudulent activities and helping maintain the integrity of your sessions. For example, they assist in preventing unauthorized access to your account.</p>
+
+<h2>22. Session Cookies and Their Role</h2>
+<p>Session cookies last only for the duration of your visit and help with navigation and session management. For example, when you add items to a shopping cart, session cookies keep track of them as you browse the site.</p>
+
+<h2>23. Persistent Cookies Role</h2>
+<p>Persistent cookies remain on your device for a fixed time and remember settings or login information. They enable you to return to the website without re-entering information, enhancing usability and convenience.</p>
+
+<h2>24. Social Media Cookies</h2>
+<p>Our website includes social media sharing buttons that may set cookies to track visitors across websites. These are managed by the social platforms and subject to their privacy policies, not ours.</p>
+
+<h2>25. Opt-Out Links</h2>
+<p>We provide links and instructions for opting out of personalized advertising, including industry tools like YourOnlineChoices. We support your choice not to be tracked across websites for advertising purposes.</p>
+
+<h2>26. Cookies and Children’s Privacy</h2>
+<p>We do not knowingly use cookies intended to collect personal information from children under 13 years old. We encourage parents to supervise their children’s online activities and manage cookie settings appropriately.</p>
+
+<h2>27. Cookies and Consent Laws</h2>
+<p>Our cookie policy aligns with applicable laws, such as the EU GDPR, California CCPA, and others, requiring informed and affirmative consent before placing non-essential cookies on your device.</p>
+
+<h2>28. Effect of Disabling Cookies</h2>
+<p>Disabling cookies may reduce website functionality, including features like login, preferences, and personalized content. We recommend enabling cookies for optimal performance while managing your privacy preferences.</p>
+
+<h2>29. Third-Party Cookie Security</h2>
+<p>Third-party cookies on our site are set by trusted partners adhering to security standards. However, RootCraft Studio is not liable for the security or privacy practices of third parties and encourages users to review respective policies.</p>
+
+<h2>30. Cross-Device Tracking</h2>
+<p>Some cookies may track your activity across multiple devices to give a consistent experience. You can opt out of such tracking by managing your cookie preferences or adjusting your ad personalization settings.</p>
+
+<h2>31. How We Handle Data Collected by Cookies</h2>
+<p>Data collected through cookies is used solely for purposes outlined in this policy. We do not sell or rent cookie data to third parties. Personal data collected with cookies is handled according to our Privacy Policy.</p>
+
+<h2>32. Cookie-Control Software</h2>
+<p>You can use browser add-ons or opt-out mechanisms to prevent companies from collecting data via cookies. These tools give you greater control over your online privacy.</p>
+
+<h2>33. User Responsibility</h2>
+<p>While we provide cookie controls, you are responsible for reviewing and managing your cookie preferences according to your privacy comfort level to enhance your browsing safety.</p>
+
+<h2>34. Cookies in Mobile Applications</h2>
+<p>When accessing our services through mobile applications, cookies or similar technologies may be used to store preferences, track usage, or offer personalized content, consistent with this policy.</p>
+
+<h2>35. Cookies and Email Marketing</h2>
+<p>Cookies help us understand interactions with our emails and measure campaign effectiveness. We respect your choice to opt out of marketing emails at any time.</p>
+
+<h2>36. Cookies and Third-Party Widgets</h2>
+<p>Widgets from third parties embedded in our site may set cookies. We recommend reviewing these parties' policies as they are responsible for their cookie use.</p>
+
+<h2>37. Location and IP Address Cookies</h2>
+<p>We may use cookies to approximate your location based on your IP address for regional personalization such as language or currency preferences.</p>
+
+<h2>38. Analytics Cookies and Performance</h2>
+<p>Analytics cookies collect data anonymously to help us understand website usage and improve speed, navigation, and content relevancy.</p>
+
+<h2>39. Retention of Cookie Data</h2>
+<p>We retain cookie data only as long as necessary for legitimate business purposes or legal compliance. Some cookies expire automatically based on their lifespan.</p>
+
+<h2>40. Changes to Our Cookie Policy</h2>
+<p>RootCraft Studio may update this Cookie Policy as needed. We notify users of material changes via updates on our website or in-app notices. Your continued use of our site constitutes acceptance of such updates.</p>
+
+</main>
+<footer role="contentinfo">
+  <div class="container">
+    <div class="address" aria-label="Company address">
+      <h3>Contact Us</h3>
+      <p>RootCraft Studio<br/>
+      53 Washington Square S<br/>
+      New York, NY 10012, USA</p>
+      <p>Phone: (855) 811-9898</p>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent banner">
+  <p>RootCraft Studio uses cookies to provide a better browsing experience, analyze site traffic, and show personalized content. By clicking "Accept", you consent to our use of cookies. You can decline to not accept non-essential cookies.</p>
+  <button id="accept-cookies" aria-label="Accept cookies">Accept</button>
+  <button id="decline-cookies" aria-label="Decline cookies">Decline</button>
+</div>
+
+<script>
+  const cookieConsent = document.getElementById('cookie-consent');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+
+  function setCookie(name, value, days) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+  }
+  function getCookie(name) {
+    return document.cookie.split('; ').reduce((r, v) => {
+      const parts = v.split('=');
+      return parts[0] === name ? decodeURIComponent(parts[1]) : r
+    }, '');
+  }
+
+  function hideConsent() {
+    cookieConsent.style.display = 'none';
+  }
+
+  // Check if user already made a choice
+  if (getCookie('rootcraft_cookie_consent')) {
+    hideConsent();
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    setCookie('rootcraft_cookie_consent', 'accepted', 365);
+    hideConsent();
+    // Here you might trigger loading of analytics and marketing cookies/scripts
+  });
+
+  declineBtn.addEventListener('click', () => {
+    setCookie('rootcraft_cookie_consent', 'declined', 365);
+    hideConsent();
+    // Here you might disable or not load non-essential cookies/scripts
+  });
+</script>
+</body>
+</html>
+

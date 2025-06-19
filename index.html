@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RootCraft Studio - Design Your Garden Story</title>
+<!-- Google Fonts: Poppins for friendly clean + Indie Flower for hand-drawn note style -->
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; 
+    background: #f9f7f1 url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da734be6-8556-4b47-85d1-8751abdffb14.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #2f4f4f;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    color: #3a8240;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #1e4200;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Indie Flower', cursive;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c662d;
+  }
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #336633;
+    border-bottom: 2px solid #558b2f;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+  h3 {
+    color: #437d35;
+    margin-bottom: 16px;
+  }
+
+  /* Container with max width */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Header */
+  header {
+    background: #dbeed6cc;
+    backdrop-filter: saturate(180%) blur(12px);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2b572c;
+    user-select: none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background: #8fbf62cc;
+    color: #1e390d;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #a6d785cc, #70a14fcc);
+    color: white;
+    padding: 120px 24px 100px;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    position: relative;
+    box-shadow: inset 0 0 10px #5a7d2a90;
+  }
+  .hero h1 {
+    font-size: 3.75rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  .hero p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    max-width: 760px;
+    margin: 16px auto 48px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  }
+  .hero .slogan {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 24px;
+    font-style: italic;
+  }
+  .btn-primary {
+    font-family: 'Poppins', sans-serif;
+    background: #4f7a21;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 14px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgb(79 122 33 / 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: #6caf36;
+    box-shadow: 0 12px 28px rgb(74 161 38 / 0.75);
+    outline: none;
+  }
+
+  /* Section common styles */
+  section {
+    background: #fdfcf6cc;
+    margin: 48px 0;
+    padding: 48px 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgb(30 60 15 / 0.1);
+  }
+  /* Cards grid for services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    gap: 32px;
+  }
+  .card {
+    background: #fffef3;
+    border: 1px solid #bad6a0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover,
+  .card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgb(0 0 0 / 0.1);
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    filter: drop-shadow(1px 4px 1px #93a666cc);
+  }
+  .card h3 {
+    margin-bottom: 12px;
+    color: #4d6236;
+  }
+  .card p {
+    font-size: 1rem;
+    color: #566f37;
+  }
+
+  /* About Section */
+  #about p {
+    max-width: 850px;
+    margin: 0 auto 16px;
+    font-size: 1.1rem;
+    color: #475c31;
+  }
+  #about p + p {
+    margin-top: 16px;
+  }
+
+  /* Tips Section - list style */
+  #tips ul {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    color: #486b18;
+    font-size: 1.1rem;
+  }
+  #tips ul li {
+    margin: 12px 0;
+    line-height: 1.5;
+  }
+
+  /* Feedback Section */
+  #feedback > p {
+    max-width: 700px;
+    margin: 0 auto 32px;
+    font-size: 1.15rem;
+    color: #3f621a;
+  }
+  #feedback form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  #feedback label {
+    font-weight: 700;
+    color: #355617;
+  }
+  #feedback input[type="text"],
+  #feedback input[type="email"],
+  #feedback textarea {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1.8px solid #8fb348;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+    min-height: 44px;
+  }
+  #feedback textarea {
+    min-height: 100px;
+  }
+  #feedback button[type="submit"] {
+    align-self: flex-start;
+    padding: 14px 36px;
+    background: #4f7a21cc;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgb(63 105 15 / 0.5);
+    transition: background-color 0.3s ease;
+  }
+  #feedback button[type="submit"]:hover,
+  #feedback button[type="submit"]:focus {
+    background: #6caf36;
+    outline: none;
+  }
+  #feedback .feedback-success {
+    color: #376a02;
+    background: #d6f5a8cc;
+    border: 1.5px solid #a3d355;
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-top: 12px;
+    font-weight: 600;
+    display: none;
+  }
+
+  /* Disclaimer Section */
+  #disclaimer p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: #556b29;
+    font-style: italic;
+  }
+
+  /* Footer */
+  footer {
+    background: #4a7037cc;
+    color: #ebf6d1;
+    padding: 48px 24px;
+    margin-top: auto;
+  }
+  footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  footer .address,
+  footer .customer-satisfaction {
+    max-width: 460px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  footer .customer-satisfaction {
+    background: #356029cc;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px #1f3d11;
+    padding: 24px;
+    font-weight: 600;
+  }
+
+  /* Responsive */
+  @media (max-width:1024px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    .hero {
+      padding: 80px 16px 80px;
+    }
+  }
+  @media (max-width:640px) {
+    nav ul {
+      gap: 16px;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    footer .container {
+      flex-direction: column;
+    }
+    footer .address,
+    footer .customer-satisfaction {
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav-container" role="banner">
+    <div class="logo" aria-label="RootCraft Studio logo">RootCraft Studio</div>
+    <nav>
+      <ul role="navigation">
+       <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" role="region" aria-label="Website introduction and slogan">
+  <h1>RootCraft Studio</h1>
+  <p>Your partner for garden planning, DIY kits, and creative designs to craft your dream outdoor space.</p>
+  <div class="slogan" aria-label="Site slogan">“Design your garden story.”</div>
+  <button class="btn-primary" onclick="alert('Thank you for your interest! Contact us for a consultation.')"
+    aria-label="Contact RootCraft Studio for consultation">Get Started</button>
+</section>
+
+<main class="container" role="main">
+
+  <section id="about" tabindex="0" aria-labelledby="about-title">
+    <h2 id="about-title">About RootCraft Studio</h2>
+    <p>At RootCraft Studio, we cultivate creativity and nurture growth. Specializing in bespoke garden planning and DIY botanical kits, our mission is to help you design a flourishing outdoor space that tells your personal story. Founded by passionate garden consultants and designers, we combine artistic vision with practical expertise to create inspiring, sustainable gardens that bloom year-round.</p>
+    <p>Our dedicated team of horticulturists, landscape artists, and DIY enthusiasts bring decades of combined experience in urban gardening, ecological landscaping, and creative design. We believe every garden should reflect the unique tastes and lifestyle of its owner – whether you have a sprawling backyard or a cozy balcony, we tailor our solutions to suit every space and ambition.</p>
+    <p>RootCraft Studio thrives on community and education. That’s why we offer workshops, online tutorials, and curated kits to empower gardeners of all skill levels. Our core values are sustainability, creativity, accessibility, and customer satisfaction. We cherish the connection between people and nature and aim to foster it through thoughtfully crafted garden experiences.</p>
+    <img src="p1.png" alt="Hand-drawn garden planning sketch with leaves and paths in green and earth tones" />
+  </section>
+
+  <section id="services" tabindex="0" aria-labelledby="services-title">
+    <h2 id="services-title">Our Services</h2>
+    <div class="services-grid">
+
+      <article class="card" tabindex="0" aria-label="Garden planning service">
+        <img src="s1.png" alt="Illustration of a garden layout plan with trees, beds, and paths in hand-drawn style" />
+        <h3>Garden Planning & Consulting</h3>
+        <p>Our expert consultation service begins with a thorough evaluation of your outdoor space, analyzing soil health, sunlight exposure, and climate conditions. We collaboratively design tailored garden layouts that maximize beauty and sustainability.</p>
+        <p>We focus on selecting native, low-maintenance plants to ensure a thriving garden with minimal water and chemical inputs. Seasonal layouts and companion planting strategies enhance biodiversity and naturally deter pests.</p>
+        <p>Whether you desire an edible herb haven, a serene flower retreat, or a mixed-use garden, we guide you through every step — from initial sketches to plant selection and ongoing care advice.</p>
+      </article>
+
+      <article class="card" tabindex="0" aria-label="Creative DIY garden kits">
+        <img src="s2.png" alt="Photo of a DIY gardening kit including seeds, soil, pots, and garden tools" />
+        <h3>DIY Garden Kits</h3>
+        <p>Designed for beginners and experienced gardeners alike, our DIY kits include everything needed to start your mini oases. Each kit contains premium seeds matched to your region, organic soil mixes, biodegradable pots, and comprehensive step-by-step guides.</p>
+        <p>From succulent terrariums to herb gardens and wildflower patches, our kits encourage creativity and hands-on learning. We also provide seasonal kits, perfect for gifting or experimenting with new plants throughout the year.</p>
+        <p>With RootCraft Studio's DIY kits, you gain confidence, skills, and the joy of cultivating living beauty yourself.</p>
+      </article>
+
+      <article class="card" tabindex="0" aria-label="Boutique garden design service">
+        <img src="s3.png" alt="Hand-drawn illustration of a boutique-style garden design with flowers and natural textures" />
+        <h3>Boutique Garden Design</h3>
+        <p>Transform your garden into a stunning sanctuary with our boutique design service. Here, art meets nature through carefully curated plant palettes, natural materials, and customized hardscapes.</p>
+        <p>Our designs integrate subtle water features, textured pathways, and native flora to create sensory-rich environments that evolve with the seasons. We work closely to incorporate your tastes, lifestyle, and local ecosystem.</p>
+        <p>Each garden is uniquely crafted as a peaceful retreat perfect for reflection, gatherings, or elevating your home's curb appeal.</p>
+      </article>
+
+      <article class="card" tabindex="0" aria-label="Influencer collaborations">
+        <img src="s4.png" alt="Creative flat lay photo of garden design elements with social media icons indicating influencer collaboration" />
+        <h3>Influencer Collaborations</h3>
+        <p>Partner with RootCraft Studio to create captivating content that inspires your followers to embrace the joy of gardening. We provide unique designs, exclusive DIY kits, and expert insights to help your social channels blossom.</p>
+        <p>Our marketing collaborations focus on authentic storytelling, eco-conscious lifestyle promotion, and trendsetting garden aesthetics.</p>
+        <p>Collaborate with us for sponsored posts, giveaways, and live workshop streams to engage and grow your audience.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="tips" tabindex="0" aria-labelledby="tips-title">
+    <h2 id="tips-title">Garden Tips & Tricks</h2>
+    <ul>
+      <li><strong>Choose Native Plants:</strong> Selecting plants native to your local region saves water, improves soil health, and supports native pollinators like bees and butterflies. Native gardens require less fertilizer and pesticides, creating a natural balance.</li>
+      <li><strong>Companion Planting:</strong> Use combinations such as marigolds with tomatoes or basil with peppers to naturally deter pests and boost growth. These partnerships mimic healthy ecosystems, reducing need for chemical controls.</li>
+      <li><strong>Vertical Gardening:</strong> Maximize limited space with trellises, hanging planters, or living walls. This technique encourages air circulation, saves ground area, and adds striking visual interest.</li>
+      <li><strong>Mulching:</strong> Apply 2-4 inches of organic mulch (like shredded bark or leaves) around plants to conserve soil moisture, suppress weeds, and regulate soil temperature.</li>
+      <li><strong>Crop Rotation:</strong> Change plant locations annually to reduce soil-borne diseases and nutrient depletion. Rotate heavy feeders with legumes or root crops for balanced soil health.</li>
+      <li><strong>Seed Starting Indoors:</strong> Begin your growing season early by sowing seeds inside under heat lamps or sunny windowsills. Our DIY kits come with starter trays and instructions for a successful indoor germination.</li>
+      <li><strong>Soil Testing:</strong> Regularly check pH and nutrient levels via affordable kits or local extension services. Amend soil with compost, lime, or sulfur as needed to optimize plant health.</li>
+      <li><strong>Garden Journaling:</strong> Maintain written notes on planting dates, weather patterns, harvests, and successes. This record helps refine your gardening practices year after year.</li>
+      <li><strong>Water Conservation:</strong> Use rain barrels, drip irrigation, or soaker hoses to minimize water waste. Morning watering reduces evaporation and fungal issues.</li>
+      <li><strong>Pruning Techniques:</strong> Remove dead or diseased branches regularly and learn proper cuts to encourage dense, healthy growth and abundant blooms. Different plant types have distinct pruning requirements.</li>
+      <li><strong>Beneficial Insects:</strong> Encourage ladybugs, lacewings, and predatory wasps in your garden by providing shelter and nectar. These natural predators reduce pest populations safely.</li>
+      <li><strong>Seasonal Decorations:</strong> Utilize harvest elements like gourds, dried flowers, and colorful foliage for seasonal charm that complements your garden design.</li>
+      <li><strong>Creating Wildlife Habitats:</strong> Add birdhouses, bat boxes, or small ponds to invite wildlife, enrich biodiversity, and create a lively garden atmosphere.</li>
+      <li><strong>Composting:</strong> Turn kitchen scraps and garden debris into nutrient-rich compost that boosts your soil’s fertility. Avoid meat and dairy to prevent pests.</li>
+      <li><strong>Pollinator Gardens:</strong> Plant clusters of flowering natives to feed bees, butterflies, and hummingbirds, promoting pollination and enhancing garden productivity.</li>
+    </ul>
+    <img src="p2.png" alt="Hand-drawn style illustration of gardening tools, notes, and plants on a notebook page" />
+  </section>
+
+  <section id="feedback" tabindex="0" aria-labelledby="feedback-title">
+    <h2 id="feedback-title">Customer Feedback</h2>
+    <p>We love hearing from our RootCraft Studio community! Your insights, stories, and experiences inspire us to grow and improve. Whether you want to share your gardening journey, suggest new service ideas, or simply say hello, please use the form below. Your feedback helps us cultivate better products and services that make your garden story bloom.</p>
+    <form aria-label="Feedback form" id="feedback-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" />
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required aria-required="true" />
+
+      <label for="message">Your Feedback</label>
+      <textarea id="message" name="message" rows="5" placeholder="Share your thoughts..." required aria-required="true"></textarea>
+      <button type="submit" aria-label="Submit feedback">Submit</button>
+      <div class="feedback-success" role="alert" aria-live="polite" id="success-message">Thank you for your feedback! We appreciate you helping us grow.</div>
+    </form>
+    <img src="p3.png" alt="Photo of a happy gardener smiling in a green lush garden" />
+  </section>
+
+  <section id="disclaimer" tabindex="0" aria-labelledby="disclaimer-title">
+    <h2 id="disclaimer-title">Disclaimer</h2>
+    <p>RootCraft Studio provides garden planning advice and DIY kits for inspirational purposes only. Gardening involves many variables such as climate, soil conditions, and care practices that can affect outcomes.</p>
+    <p>We disclaim liability for any damages, losses, or dissatisfaction arising from the use or interpretation of our guidance or products. Always conduct personal research and consult local horticultural experts before implementation to ensure suitability.</p>
+    <p>Use gardening tools safely and follow all instructions and local regulations when engaging with outdoor projects. RootCraft Studio maintains a commitment to accuracy but cannot guarantee results across all environments.</p>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="address" aria-label="Company address">
+      <h3>Contact Us</h3>
+      <p>RootCraft Studio<br/>
+      53 Washington Square S<br/>
+      New York, NY 10012, USA</p>
+      <p>Email: contact@rootcraftstudio.com<br/>
+      Phone: (855) 811-9898</p>
+    </div>
+    <div class="customer-satisfaction" aria-label="Customer satisfaction message">
+      <h3>Committed To Increasing Customer Satisfaction</h3>
+      <p>Our highest priority is delivering exceptional service and products that enrich your garden experience. We continuously listen to your feedback to enhance quality, sustainability, and creative flair in all RootCraft Studio offerings.</p>
+      <p>Thank you for trusting us as your partner in growth. Together, we cultivate beauty, joy, and lasting connections rooted deeply in nature’s harmony.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Feedback form submission simulation
+  const form = document.getElementById('feedback-form');
+  const successMessage = document.getElementById('success-message');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // Simple validation passed - show success message and clear
+    successMessage.style.display = 'block';
+    form.reset();
+  });
+</script>
+</body>
+</html>
+

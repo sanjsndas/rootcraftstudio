@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RootCraft Studio - Contact Us</title>
+<!-- Google Fonts: Poppins + Indie Flower -->
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: #f9f7f1 url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a9c25f66-d0d8-4ae5-9ff2-132328642170.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #2f4f4f;
+    line-height: 1.75;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    color: #3a8240;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #1e4200;
+  }
+  h1,h2,h3 {
+    font-family: 'Indie Flower', cursive;
+    margin-top: 0;
+    color: #2c662d;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px solid #558b2f;
+    padding-bottom: 6px;
+    margin-bottom: 24px;
+    margin-top: 2em;
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px 24px;
+    background: #fdfcf6cc;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgb(30 60 15 / 0.1);
+    overflow-wrap: break-word;
+  }
+  header {
+    background: #dbeed6cc;
+    backdrop-filter: saturate(180%) blur(12px);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 24px;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2b572c;
+    user-select: none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background: #8fbf62cc;
+    color: #1e390d;
+  }
+  form {
+    max-width: 700px;
+    margin: 24px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  label {
+    font-weight: 700;
+    color: #355617;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1.8px solid #8fb348;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+    min-height: 44px;
+  }
+  textarea {
+    min-height: 120px;
+  }
+  button[type="submit"] {
+    align-self: flex-start;
+    padding: 14px 40px;
+    background: #4f7a21cc;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgb(63 105 15 / 0.5);
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    background: #6caf36;
+    outline: none;
+  }
+  .success-message {
+    margin-top: 16px;
+    font-weight: 600;
+    color: #376a02;
+    background: #d6f5a8cc;
+    border: 1.5px solid #a3d355;
+    padding: 12px 18px;
+    border-radius: 12px;
+    display: none;
+  }
+  footer {
+    background: #f0f0f0;
+    color: #000000;
+    padding: 48px 24px;
+    margin-top: auto;
+  }
+  footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  footer .address {
+    max-width: 460px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  @media (max-width: 768px) {
+    nav ul {
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    footer .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    footer .address {
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-container" role="banner">
+    <div class="logo" aria-label="RootCraft Studio logo">RootCraft Studio</div>
+    <nav>
+      <ul role="navigation">
+        <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="container" role="main" aria-label="Contact Information and Extended Contact Topics">
+
+<h1>Contact Us</h1>
+<p>Welcome to RootCraft Studio! We value your questions, feedback, and suggestions. Whether you need help with our products, want to book a workshop, or simply want to connect, this page offers comprehensive information and multiple ways to contact us effectively.</p>
+
+<h2>1. How to Reach Us</h2>
+<p>You can reach RootCraft Studio via phone, email, online contact form, or through one of our social media channels. Our customer support team is ready to assist you with any requests, big or small.</p>
+
+<h2>2. Phone Support Hours</h2>
+<p>Our phone support is available Monday to Friday, 09:00 AM to 06:00 PM EST. We encourage you to call within these hours for immediate assistance. Outside business hours, please use other contact methods or our FAQ section.</p>
+
+<h2>3. Email Correspondence</h2>
+<p>Send detailed inquiries or requests to contact@rootcraftstudio.com. We aim to respond within 24 hours on business days. Providing complete information helps us address your needs thoroughly.</p>
+
+<h2>4. Online Contact Form</h2>
+<p>Use the contact form below for quick messages, booking requests, or feedback. Please fill all the required fields accurately to ensure a prompt response.</p>
+
+<h2>5. Workshop Bookings</h2>
+<p>Interested in participating in our hands-on gardening workshops? Contact our events coordinator to check schedules, availability, and pricing. Early booking is recommended due to limited spots.</p>
+
+<h2>6. Bulk and Corporate Orders</h2>
+<p>Businesses and organizations seeking bulk orders or partnerships can contact our corporate sales team to discuss custom pricing, delivery options, and tailored service packages.</p>
+
+<h2>7. Technical Support</h2>
+<p>Experiencing issues with our online platforms or digital products? Our technical support specialists are available to help troubleshoot and resolve your problems efficiently.</p>
+
+<h2>8. Feedback and Suggestions</h2>
+<p>Your feedback is invaluable to us. Use our feedback form or contact us to share your gardening experiences, service suggestions, or product ideas. We consider every comment carefully to improve.</p>
+
+<h2>9. Product Information Requests</h2>
+<p>Reach out for more details about our product components, sourcing, or instructions. Our product experts provide transparent information to support your gardening pursuits.</p>
+
+<h2>10. Order Changes and Cancellations</h2>
+<p>If you need to modify or cancel an order, please contact us promptly. Once processing begins, changes may be limited or unavailable. Early communication helps us accommodate your requests better.</p>
+
+<h2>11. Returns and Refund Guidance</h2>
+<p>For questions about returning orders or receiving refunds, contact our returns team. We provide clear procedures and support to make returns easy and fair, following our return policies.</p>
+
+<h2>12. Shipping Support</h2>
+<p>Inquire about shipping options, costs, and tracking through our customer service. We work closely with carriers to deliver your orders safely and on schedule.</p>
+
+<h2>13. Accessibility Services</h2>
+<p>We aim for inclusivity. If you face accessibility challenges using our website or services, contact us so we can assist or accommodate your needs appropriately.</p>
+
+<h2>14. Media Requests</h2>
+<p>Journalists, bloggers, and media professionals seeking interviews, partnership, or press materials should contact our press office for timely and professional responses.</p>
+
+<h2>15. Partnership Inquiries</h2>
+<p>Collaborate with RootCraft Studio to create impactful projects that promote gardening and sustainability. Contact marketing to explore partnership possibilities that benefit both parties.</p>
+
+<h2>16. Wholesale and Distribution</h2>
+<p>Retailers interested in offering our products can reach out to our wholesale department for pricing, ordering processes, and support to build successful partnerships.</p>
+
+<h2>17. Suppliers and Vendors</h2>
+<p>Existing and potential suppliers can contact us to discuss product supply, quality standards, and logistics. We value strong supplier relationships to maintain product quality.</p>
+
+<h2>18. Complaints Resolution</h2>
+<p>We take customer complaints seriously. Contact our customer relations team with your concerns, and we will strive to resolve issues promptly, fairly, and professionally.</p>
+
+<h2>19. Privacy Questions</h2>
+<p>Questions about personal data handling can be directed to our Data Protection Officer or through our Privacy Policy page.</p>
+
+<h2>20. Security Reporting</h2>
+<p>Report suspected security issues or breaches confidentially to security@rootcraftstudio.com. We appreciate your vigilance in helping us maintain a secure environment.</p>
+
+<h2>21. Career Opportunities</h2>
+<p>If you are interested in working with us, contact human resources for information on job openings, internships, and company culture.</p>
+
+<h2>22. Affiliate Program Details</h2>
+<p>Join our affiliate program to promote RootCraft Studio products and earn commissions. Contact affiliate support for sign-up and management.</p>
+
+<h2>23. Gift Cards and Vouchers</h2>
+<p>Questions about gift cards or vouchers can be addressed to our billing department for purchase, redemption, and balance inquiries.</p>
+
+<h2>24. Educational Resources</h2>
+<p>Learn more about our gardening workshops, tutorials, and publications by contacting our education department.</p>
+
+<h2>25. Sustainability Initiatives</h2>
+<p>Engage with our environmental programs and learn how you can contribute to sustainable gardening practices through direct contact with our sustainability coordinator.</p>
+
+<h2>26. Event Sponsorship</h2>
+<p>Become an event sponsor or participate in community events by liaising with our event team.</p>
+
+<h2>27. Newsletter Management</h2>
+<p>Subscribe, unsubscribe, or modify your preferences by contacting our communications team or using links at the bottom of our newsletters.</p>
+
+<h2>28. Product Customization</h2>
+<p>Explore options for custom garden kits or design consultations through our specialized services team.</p>
+
+<h2>29. Billing and Payments</h2>
+<p>Get assistance with invoices, payment methods, or transaction issues by contacting finance support.</p>
+
+<h2>30. Website Feedback</h2>
+<p>Report bugs, suggest features, or provide general feedback on your website experience via our feedback forms or direct contact.</p>
+
+<h2>31. Charitable Giving</h2>
+<p>Support or inquire about RootCraft Studio’s charitable activities through our community outreach office.</p>
+
+<h2>32. Product Safety Notices</h2>
+<p>Stay informed about recalls or safety updates by contacting customer service or subscribing to alerts.</p>
+
+<h2>33. Warranty Claims</h2>
+<p>Information on product warranties and how to file claims can be obtained from our customer support.</p>
+
+<h2>34. International Shipping</h2>
+<p>International customers can contact our global support for guidance on customs, duties, and shipping timelines.</p>
+
+<h2>35. Social Media Support</h2>
+<p>Get support or connect with us through our various social media platforms for real-time communication and updates.</p>
+
+<h2>36. Privacy and Data Requests</h2>
+<p>Requests for personal data access, correction, or deletion can be submitted to our Data Protection Officer.</p>
+
+<h2>37. Lost or Stolen Packages</h2>
+<p>Report lost or stolen shipments promptly to our support team for investigation and resolution.</p>
+
+<h2>38. Emergency Contact</h2>
+<p>For critical issues needing urgent support outside business hours, contact us via the emergency contact form on our website.</p>
+
+<h2>39. Frequently Asked Questions</h2>
+<p>Visit our FAQ section for quick answers to common questions. If you need further help, contact us directly.</p>
+
+<h2>40. Community Engagement</h2>
+<p>Join our gardening community events, forums, and social groups by contacting our community manager or signing up on our website.</p>
+
+<form aria-label="Contact Form" id="contact-form" novalidate>
+  <h2>Send Us a Message</h2>
+  <label for="name">Full Name<span aria-label="required">*</span></label>
+  <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" />
+  
+  <label for="email">Email Address<span aria-label="required">*</span></label>
+  <input type="email" id="email" name="email" placeholder="your.email@example.com" required aria-required="true" />
+  
+  <label for="subject">Subject<span aria-label="required">*</span></label>
+  <input type="text" id="subject" name="subject" placeholder="Subject of your message" required aria-required="true" />
+  
+  <label for="message">Message<span aria-label="required">*</span></label>
+  <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required aria-required="true"></textarea>
+  
+  <button type="submit" aria-label="Submit contact form">Submit</button>
+  <p class="success-message" id="success-message" role="alert" aria-live="polite">Thank you for contacting RootCraft Studio! We will get back to you as soon as possible.</p>
+</form>
+
+</main>
+<footer role="contentinfo">
+  <div class="container">
+    <div class="address" aria-label="Company address">
+      <h3>Contact Us</h3>
+      <p>RootCraft Studio<br/>
+      53 Washington Square S<br/>
+      New York, NY 10012, USA</p>
+      <p>Phone: (855) 811-9898</p>
+    </div>
+  </div>
+</footer>
+<script>
+  const form = document.getElementById('contact-form');
+  const successMessage = document.getElementById('success-message');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    // Basic validation
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+    if (!name || !email || !subject || !message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+    // Simple email format validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    // Show success message and reset form
+    successMessage.style.display = 'block';
+    form.reset();
+  });
+</script>
+</body>
+</html>
+
